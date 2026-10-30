@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Votre panier NovaTech - équipements et accessoires high-tech.">
+  <title>Mon panier | NOVATECH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylepanier.css">
+  <script src="panierscript.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#" aria-label="NovaTech accueil">
+      <span class="brand-mark">N</span>
+      <span>NOVA<span class="brand-light">TECH</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#">Accueil</a>
+      <a href="#">Ordinateurs</a>
+      <a href="#">Accessoires</a>
+      <a href="#">Promotions</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="nav-link" href="#">Mon compte</a>
+      <a class="cart-link" href="#cart" aria-label="Mon panier">
+        <span class="cart-symbol">▣</span>
+        <span>Panier</span>
+        <span class="cart-bubble" id="nav-count">4</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container" id="cart">
+    <div class="breadcrumb"><a href="#">Accueil</a><span>/</span><a href="#">Boutique</a><span>/</span><strong>Mon panier</strong></div>
+
+    <section class="intro">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-line"></span> VOTRE ESPACE NOVATECH</p>
+        <h1>Votre panier<span>.</span></h1>
+        <p class="subtitle">Tout votre setup préféré, prêt à être commandé.</p>
+      </div>
+      <div class="intro-badge"><span class="pulse-dot"></span> Votre sélection en cours</div>
+    </section>
+
+    <div class="cart-layout">
+      <section class="cart-panel" aria-labelledby="articles-title">
+        <div class="panel-heading">
+          <div>
+            <p class="section-kicker">RÉCAPITULATIF</p>
+            <h2 id="articles-title">Articles sélectionnés <span id="item-count">(4)</span></h2>
+          </div>
+          <button class="text-button" id="clear-cart" type="button">Vider le panier <span>×</span></button>
+        </div>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div id="empty-cart" class="empty-state" hidden>
+          <div class="empty-icon">⌑</div>
+          <h3>Votre panier est vide</h3>
+          <p>Il est temps de trouver le prochain élément de votre setup.</p>
+          <button class="primary-button" id="continue-shopping" type="button">Découvrir les produits <span>→</span></button>
+        </div>
+
+        <div class="service-strip">
+          <div class="service-icon">✓</div>
+          <div><strong>Achats en toute tranquillité</strong><span>Assistance client et produits sélectionnés avec soin.</span></div>
+        </div>
+      </section>
+
+      <aside class="summary" aria-labelledby="summary-title">
+        <div class="summary-topline"><span class="summary-icon">▤</span><span>COMMANDE</span></div>
+        <h2 id="summary-title">Résumé de commande</h2>
+
+        <div class="summary-line"><span>Sous-total</span><strong id="subtotal">0,000 DT</strong></div>
+        <div class="summary-line"><span>Livraison</span><strong id="shipping">Gratuite</strong></div>
+        <p class="shipping-note" id="shipping-note">Choisissez votre mode de réception.</p>
+
+        <div class="summary-divider"></div>
+        <h3>Mode de réception</h3>
+        <label class="choice">
+          <input type="radio" name="delivery" value="pickup" checked>
+          <span class="custom-radio"></span>
+          <span class="choice-copy"><strong>Retrait en magasin</strong><small>Récupérez votre commande gratuitement</small></span>
+          <b>0 DT</b>
+        </label>
+        <label class="choice">
+          <input type="radio" name="delivery" value="delivery">
+          <span class="custom-radio"></span>
+          <span class="choice-copy"><strong>Livraison à domicile</strong><small>Recevez votre commande chez vous</small></span>
+          <b>8 DT</b>
+        </label>
+
+        <div class="summary-divider"></div>
+        <div class="total-line"><span>Total à payer</span><strong id="total">0,000 DT</strong></div>
+
+        <h3 class="payment-title">Mode de paiement</h3>
+        <label class="payment-choice"><input type="radio" name="payment" value="onsite" checked><span>💳</span> Paiement en magasin</label>
+        <label class="payment-choice"><input type="radio" name="payment" value="delivery"><span>📦</span> Paiement à la livraison</label>
+
+        <button class="checkout-button" id="checkout" type="button">Confirmer ma commande <span>→</span></button>
+        <p class="secure-note"><span>▣</span> Commande de démonstration · Aucun paiement réel</p>
+      </aside>
+    </div>
+
+    <a class="continue-link" href="#"><span>←</span> Continuer mes achats</a>
+    <footer class="footer"><span>© 2026 NOVATECH</span><span>La technologie à portée de main.</span></footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
